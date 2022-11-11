@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Prueba | El más rapido gana</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<main>
+		<div class="alerta">
+			<div class="alerta-cuadro">
+				<h2>Controles del juego</h2>
+				<ul>
+					<li>jugador 1: a, s, d.</li>
+					<li>jugador 2: 1, 2, 3.</li>
+				</ul>
+				<button class="botones cerrar_modal">Aceptar</button>
+			</div>
+		</div>
+		<h1 class="titulo">Presiona varias veces para ganar!</h1>
+		<div class="jugadores">
+			<div class="jugador j1">0 puntos</div>
+			<span class="contador">VS</span>
+			<div class="jugador j2">0 puntos</div>
+		</div>
+		<div class="opciones">
+			<div>
+				<span class="botones info">
+					configuración
+				</span>
+				<select class="rival botones">
+					<option value="ia">IA</option>
+					<option value="j2">J2</option>
+				</select botones>
+				<select class="dificultad botones">
+					<option value="facil">facil</option>
+					<option value="normal">normal</option>
+					<option value="dificil">dificil</option>
+				</select>
+			</div>
+			<button class="jugar">Jugar!</button>
+		</div>
+	</main>
+	<script src="scripts.js"></script>
+</body>
+</html>
