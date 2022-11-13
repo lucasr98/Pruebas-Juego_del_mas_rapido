@@ -44,13 +44,13 @@ class Ia extends Jugadores{
 	}
 	mostrarDificultad(){
 		if(document.querySelector(".dificultad").value == "facil"){
-			this.nivel = [15, 155]
+			this.nivel = [20, 200]
 		}
 		else if(document.querySelector(".dificultad").value == "normal"){
-			this.nivel = [10, 95]
+			this.nivel = [25, 105]
 		}
 		else if(document.querySelector(".dificultad").value == "dificil"){
-			this.nivel = [5, 60]
+			this.nivel = [30, 65]
 		}
 	}
 }
@@ -193,18 +193,22 @@ function iniciarJuego(){
 
 function activarContadorIA(){
 	ia.mostrarDificultad()
-	iniciarContadorIA = setInterval(mantenerContadorIA, (Math.random() * ia.nivel[0]) + ia.nivel[1]);
-	return detenerContadorIA()
+	return mantenerContadorIA()
 }
 
 function mantenerContadorIA(){
-	ia.aumentarScore();
+	iniciarContadorIA = ia.nivel[1] - (Math.random() * ((ia.nivel[0] * ia.nivel[1]) / 100))
+	if (contador == 0) {
+		console.log(`cada ${iniciarContadorIA} mili segundos.`)
+		ia.aumentarScore();
+		return temporizador()
+	}
 }
 
-function detenerContadorIA(){
+function temporizador(){
 	setTimeout(()=>{
-		clearInterval(iniciarContadorIA)
-	}, tiempo * 1000)
+		return mantenerContadorIA()
+	}, iniciarContadorIA)
 }
 
 // MODAL
